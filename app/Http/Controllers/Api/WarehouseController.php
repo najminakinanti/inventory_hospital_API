@@ -4,46 +4,66 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Warehouse;
 
 class WarehouseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    //
     public function index()
     {
-        //
+        return response()->json(Warehouse::with('items')->get());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    //
+    public function show($id)
+    {
+        $warehouse = Warehouse::with('items')->find($id);
+
+        if (!$warehouse) {
+            return response()->json(['message' => 'Warehouse not found'], 404);
+        }
+
+        return response()->json($warehouse);
+    }
+
+    //
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'location' => 'required|string|max:255',
+        ]);
+
+        $warehouse = Warehouse::create($validated);
+        return response()->json($warehouse, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    //
+    public function update(Request $request, $id)
     {
-        //
+        $warehouse = Warehouse::find($id);
+
+        if (!$warehouse) {
+            return response()->json(['message' => 'Warehouse not found'], 404);
+        }
+
+        $validated = $request->validate([
+            'location' => 'sometimes|string|max:255',
+        ]);
+
+        $warehouse->update($validated);
+        return response()->json($warehouse);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    //
+    public function destroy($id)
     {
-        //
-    }
+        $warehouse = Warehouse::find($id);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        if (!$warehouse) {
+            return response()->json(['message' => 'Warehouse not found'], 404);
+        }
+
+        $warehouse->delete();
+        return response()->json(['message' => 'Warehouse deleted successfully']);
     }
 }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hospitals extends Model
+class Hospital extends Model
 {
     use HasFactory;
 
@@ -14,8 +14,8 @@ class Hospitals extends Model
         'address',
     ];
 
-    public function orders()
+    public function order()
     {
-        return $this->hasMany(Orders::class);
+        return $this->hasMany(Order::class);
     }
 }

@@ -4,46 +4,68 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Hospital;
 
 class HospitalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    //
     public function index()
     {
-        //
+        return response()->json(Hospital::all());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+     //
+    public function show($id)
+    {
+        $hospital = Hospital::find($id);
+
+        if (!$hospital) {
+            return response()->json(['message' => 'Hospital not found'], 404);
+        }
+
+        return response()->json($hospital);
+    }
+
+    //
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'address' => 'required|string',
+        ]);
+
+        $hospital = Hospital::create($validated);
+        return response()->json($hospital, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    //
+    public function update(Request $request, $id)
     {
-        //
+        $hospital = Hospital::find($id);
+
+        if (!$hospital) {
+            return response()->json(['message' => 'Hospital not found'], 404);
+        }
+
+        $validated = $request->validate([
+            'name' => 'sometimes|string|max:255',
+            'address' => 'sometimes|string',
+        ]);
+
+        $hospital->update($validated);
+        return response()->json($hospital);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    //
+    public function destroy($id)
     {
-        //
-    }
+        $hospital = Hospital::find($id);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        if (!$hospital) {
+            return response()->json(['message' => 'Hospital not found'], 404);
+        }
+
+        $hospital->delete();
+        return response()->json(['message' => 'Hospital deleted successfully']);
     }
 }

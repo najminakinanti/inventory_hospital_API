@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('stock');
+            $table->enum('jenis', ['Habis pakai', 'Tidak habis pakai']);
             $table->foreignId('warehouse_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +27,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('items', function (Blueprint $table) {
+            $table->dropColumn('jenis');
+            $table->dropTimestamps(); 
+        });
     }
 };

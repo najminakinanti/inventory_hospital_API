@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\OrderItem;
+use App\Models\Warehouse;
 
-class Items extends Model
+class Item extends Model
 {
     use HasFactory;
 
@@ -14,15 +16,16 @@ class Items extends Model
         'description',
         'stock',
         'warehouse_id',
+        'jenis', 
     ];
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 
     public function warehouse()
     {
-        return $this->belongsTo(Warehouses::class);
-    }
-
-    public function orders()
-    {
-        return $this->hasMany(Orders::class);
+        return $this->belongsTo(Warehouse::class);
     }
 }

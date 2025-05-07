@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Warehouses extends Model
+class Warehouse extends Model
 {
     use HasFactory;
 
@@ -13,8 +13,8 @@ class Warehouses extends Model
         'location',
     ];
 
-    public function items()
+    public function item()
     {
-        return $this->hasMany(Items::class);
+        return $this->hasMany(Item::class);
     }
 }
