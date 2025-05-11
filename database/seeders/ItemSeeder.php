@@ -14,7 +14,7 @@ class ItemSeeder extends Seeder
                 'name' => 'Masker Medis',
                 'description' => 'Masker sekali pakai untuk tenaga medis',
                 'stock' => 1000,
-                'jenis' => 'Habis pakai',
+                'kategori' => 'Lainnya',
                 'warehouse_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -23,7 +23,7 @@ class ItemSeeder extends Seeder
                 'name' => 'Alat Suntik',
                 'description' => 'Suntikan steril sekali pakai',
                 'stock' => 500,
-                'jenis' => 'Habis pakai',
+                'kategori' => 'Lainnya',
                 'warehouse_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
@@ -32,7 +32,7 @@ class ItemSeeder extends Seeder
                 'name' => 'Tempat Tidur Pasien',
                 'description' => 'Tempat tidur untuk rawat inap',
                 'stock' => 50,
-                'jenis' => 'Tidak habis pakai',
+                'kategori' => 'Lainnya',
                 'warehouse_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now()

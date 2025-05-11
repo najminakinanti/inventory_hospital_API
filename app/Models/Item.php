@@ -16,7 +16,7 @@ class Item extends Model
         'description',
         'stock',
         'warehouse_id',
-        'jenis', 
+        'kategori', 
     ];
 
     public function orderItems()

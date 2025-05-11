@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('stock');
-            $table->enum('jenis', ['Habis pakai', 'Tidak habis pakai']);
+            $table->enum('kategori', ['AlatBantu', 'Furniture', 'Monitoring', 'Sterilisasi',
+        'Bedah', 'Laboratorium', 'ProteksiDiri', 'Lainnya']);
             $table->foreignId('warehouse_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
