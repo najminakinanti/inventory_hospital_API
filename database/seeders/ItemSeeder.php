@@ -23,8 +23,8 @@ class ItemSeeder extends Seeder
                 'name' => 'Alat Suntik',
                 'description' => 'Suntikan steril sekali pakai',
                 'stock' => 500,
-                'kategori' => 'Lainnya',
-                'warehouse_id' => 1,
+                'jenis' => 'Habis pakai',
+                'warehouse_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
@@ -32,8 +32,8 @@ class ItemSeeder extends Seeder
                 'name' => 'Tempat Tidur Pasien',
                 'description' => 'Tempat tidur untuk rawat inap',
                 'stock' => 50,
-                'kategori' => 'Lainnya',
-                'warehouse_id' => 1,
+                'jenis' => 'Tidak habis pakai',
+                'warehouse_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now()
             ],
