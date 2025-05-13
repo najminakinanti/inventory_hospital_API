@@ -32,6 +32,8 @@ class HospitalController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'address' => 'required|string',
+            'email' => 'sometimes|email|unique:users,email,' . $id,
+            'password' => 'nullable|string|min:6',
         ]);
 
         $hospital = Hospital::create($validated);
@@ -48,8 +50,10 @@ class HospitalController extends Controller
         }
 
         $validated = $request->validate([
-            'name' => 'sometimes|string|max:255',
-            'address' => 'sometimes|string',
+            'name' => 'required|string|max:255',
+            'address' => 'required|string',
+            'email' => 'sometimes|email|unique:users,email,' . $id,
+            'password' => 'nullable|string|min:6',
         ]);
 
         $hospital->update($validated);

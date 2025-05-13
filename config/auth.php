@@ -36,11 +36,27 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
+        'hospital' => [
+            'driver' => 'sanctum',
+            'provider' => 'hospitals',
+        ],
+        'warehouse' => [
+            'driver' => 'sanctum',
+            'provider' => 'warehouses',
         ],
     ],
+
+    'providers' => [
+        'hospitals' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Hospital::class,
+        ],
+        'warehouses' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Warehouse::class,
+        ],
+    ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -58,18 +74,6 @@ return [
     | Supported: "database", "eloquent"
     |
     */
-
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
-        ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
-    ],
 
     /*
     |--------------------------------------------------------------------------
