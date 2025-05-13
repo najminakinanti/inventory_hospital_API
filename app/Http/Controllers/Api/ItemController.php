@@ -22,7 +22,7 @@ class ItemController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'stock' => 'required|integer|min:0',
-            'jenis' => 'required|string',
+            'kategori' => 'required|string',
             'warehouse_id' => 'required|exists:warehouses,id',
         ]);
 
@@ -55,7 +55,7 @@ class ItemController extends Controller
             'name' => 'sometimes|string|max:255',
             'description' => 'sometimes|string',
             'stock' => 'sometimes|integer|min:0',
-            'jenis' => 'required|string',
+            'kategori' => 'required|string',
             'warehouse_id' => 'sometimes|exists:warehouses,id',
         ]);
 
