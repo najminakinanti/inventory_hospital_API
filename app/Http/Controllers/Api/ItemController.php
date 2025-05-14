@@ -9,11 +9,22 @@ use App\Models\Item;
 class ItemController extends Controller
 {   
     // GET /items
-    public function index()
+    public function index(Request $request)
     {
-        // return response()->json(['message' => 'Route terpanggil'], 200);
-        return response()->json(Item::with('warehouse')->get());
+        $query = Item::with('warehouse');
+
+        if ($request->has('kategori')) {
+            $query->where('kategori', $request->kategori);
+        }
+
+        return response()->json($query->get());
     }
+
+    // public function index()
+    // {
+    //     // return response()->json(['message' => 'Route terpanggil'], 200);
+    //     return response()->json(Item::with('warehouse')->get());
+    // }
 
     //
     public function store(Request $request)
