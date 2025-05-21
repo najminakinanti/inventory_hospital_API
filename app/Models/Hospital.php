@@ -8,6 +8,19 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @OA\Schema(
+ *     schema="Hospital",
+ *     type="object",
+ *     title="Hospital",
+ *     @OA\Property(property="id", type="integer", description="Auto-generated ID"),
+ *     @OA\Property(property="name", type="string", example="RS Harapan Sehat"),
+ *     @OA\Property(property="email", type="string", format="email", example="admin@rsharapan.com"),
+ *     @OA\Property(property="address", type="string", example="Jl. Sehat No. 10"),
+ *     @OA\Property(property="password", type="string", example="rahasia123"),
+ * )
+ */
+
 class Hospital extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
