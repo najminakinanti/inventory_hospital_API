@@ -4,7 +4,7 @@ This API, built with Laravel 12 and MySQL, enables smooth, real-time interaction
 
 
 
-## ⚙️ Tech Stack
+## 🧰 Tech Stack
 
 - **Framework:** Laravel 12 (PHP 8.3+)
 - **Database:** MySQL
@@ -13,7 +13,7 @@ This API, built with Laravel 12 and MySQL, enables smooth, real-time interaction
 
 
 
-## ⚙️ Prerequisites
+## 📦 Prerequisites
 
 Before starting, make sure you have installed:
 
@@ -64,7 +64,7 @@ php artisan migrate
 
 
 
-## ⚙️ Middleware Setup for Sanctum
+## 🛡️ Middleware Setup for Sanctum
 Add this to your app/Http/Kernel.php inside the api middleware group:
 ```
 'api' => [
@@ -132,7 +132,7 @@ SESSION_DOMAIN=localhost
 php artisan serve
 ```
 
-### Base URL
+#### Base URL
 All API endpoints are prefixed with `/api`.
 
 
