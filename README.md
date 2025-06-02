@@ -1,8 +1,8 @@
-## 🏥📦 Hospital-Inventory Information System API
+# 🏥📦 Hospital-Inventory Information System API
 
 This API, built with Laravel 12 and MySQL, enables smooth, real-time interaction between hospitals and warehouses to manage and distribute medical inventory. Hospitals can place orders for healthcare items, warehouses handle inventory and fulfillment, and order statuses are tracked accurately. Every endpoint is secured using Bearer token authentication powered by Laravel Sanctum.
 
----
+
 
 ## ⚙️ Tech Stack
 
@@ -11,7 +11,7 @@ This API, built with Laravel 12 and MySQL, enables smooth, real-time interaction
 - **Authentication:** Laravel Sanctum
 - **Documentation:** L5-Swagger
 
----
+
 
 ## ⚙️ Prerequisites
 
@@ -29,40 +29,40 @@ composer -V
 mysql --version
 ```
 
----
+
 
 ## 🚀 Getting Started
 
-# 1. Clone project (ganti URL sesuai repo kamu)
+### 1. Clone project (ganti URL sesuai repo kamu)
 ```
 git clone https://github.com/your-username/your-project.git
 cd your-project
 ```
 
-# 2. Install Laravel dependencies
+### 2. Install Laravel dependencies
 ```
 composer install
 ```
 
-# 3. Setup environment file
+### 3. Setup environment file
 ```
 cp .env.example .env
 php artisan key:generate
 ```
 
-# 3. Run migrations
+### 4. Run migrations
 ```
 php artisan migrate
 ```
 
-# 4. Install Sanctum
+### 5. Install Sanctum
 ```
 composer require laravel/sanctum
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 php artisan migrate
 ```
 
----
+
 
 ## ⚙️ Middleware Setup for Sanctum
 Add this to your app/Http/Kernel.php inside the api middleware group:
@@ -74,31 +74,31 @@ Add this to your app/Http/Kernel.php inside the api middleware group:
 ],
 ```
 
----
+
 
 ## 📄 API Documentation
 
-# 1. Install L5-Swagger package via Composer
+### 1. Install L5-Swagger package via Composer
 ```
 composer require "darkaonline/l5-swagger"
 ```
 
-# 2. Publish config & assets
+### 2. Publish config & assets
 ```
 php artisan vendor:publish --provider="L5Swagger\L5SwaggerServiceProvider"
 ```
 
-# 3. Generate dokumentasi Swagger
+### 3. Generate dokumentasi Swagger
 ```
 php artisan l5-swagger:generate
 ```
 
-# After generating docs and running the Laravel server (php artisan serve), access the API documentation in your browser at:
+### After generating docs and running the Laravel server (php artisan serve), access the API documentation in your browser at:
 ```
 http://localhost:8000/api/documentation
 ```
 
----
+
 
 ## ⚙️ Configuration
 
@@ -125,17 +125,17 @@ SANCTUM_STATEFUL_DOMAINS=localhost
 SESSION_DOMAIN=localhost
 ```
 
----
+
 
 ## 🏃🏻‍♀️‍➡️ Run the Laravel Development Server
 ```
 php artisan serve
 ```
 
-# Base URL
+### Base URL
 All API endpoints are prefixed with `/api`.
 
----
+
 
 ## 🤝 Contribution
 
