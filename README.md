@@ -2,6 +2,17 @@
 
 This API, built with Laravel 12 and MySQL, enables smooth, real-time interaction between hospitals and warehouses to manage and distribute medical inventory. Hospitals can place orders for healthcare items, warehouses handle inventory and fulfillment, and order statuses are tracked accurately. Every endpoint is secured using Bearer token authentication powered by Laravel Sanctum.
 
+## 📚 Table of Contents
+
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Middleware Setup for Sanctum](#middleware-setup-for-sanctum)
+- [API Documentation](#api-documentation)
+- [Configuration](#configuration)
+- [Run the Laravel Development Server](#run-the-laravel-development-server)
+- [Contribution](#contribution)
+- [License](#license)
 
 
 ## 🧰 Tech Stack
@@ -93,7 +104,7 @@ php artisan vendor:publish --provider="L5Swagger\L5SwaggerServiceProvider"
 php artisan l5-swagger:generate
 ```
 
-### After generating docs and running the Laravel server (php artisan serve), access the API documentation in your browser at:
+### 4. Run the Laravel server (php artisan serve), access the API documentation in your browser at:
 ```
 http://localhost:8000/api/documentation
 ```
@@ -157,3 +168,11 @@ Contributions are welcome! To contribute:
     ```
 
 5. **Create** a pull request
+
+
+## 📃 License
+
+This project is licensed under the MIT License.  
+You are free to use, modify, and distribute this software with proper attribution.
+
+See the [LICENSE](LICENSE) file for more details.
