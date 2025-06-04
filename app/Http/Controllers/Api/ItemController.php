@@ -114,7 +114,7 @@ class ItemController extends Controller
                 'description' => 'required|string',
                 'stock' => 'required|integer|min:0',
                 'kategori' => 'required|string|in:AlatBantu,Furniture,Monitoring,Sterilisasi,Bedah,Laboratorium,ProteksiDiri,Lainnya',
-                'warehouse_id' => 'required|exists:warehouses,id',
+                'warehouse_id' => 'sometimes|exists:warehouses,id',
             ]);
 
             $item = Item::create($validated);

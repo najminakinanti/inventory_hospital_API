@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
             WarehouseSeeder::class,
             ItemSeeder::class,
             HospitalSeeder::class,
-            // UserSeeder::class,
             OrderSeeder::class,
             OrderItemSeeder::class,
         ]);

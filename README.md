@@ -1,6 +1,6 @@
-# 🏥📦 Hospital-Inventory Information System API
+    # 🏥📦 Hospital-Inventory Information System API
 
-This API, built with Laravel 12 and MySQL, enables smooth, real-time interaction between hospitals and warehouses to manage and distribute medical inventory. Hospitals can place orders for healthcare items, warehouses handle inventory and fulfillment, and order statuses are tracked accurately. Every endpoint is secured using Bearer token authentication powered by Laravel Sanctum.
+    This API, built with Laravel 12 and MySQL, enables smooth, real-time interaction between hospitals and warehouses to manage and distribute medical inventory. Hospitals can place orders for healthcare items, warehouses handle inventory and fulfillment, and order statuses are tracked accurately. Every endpoint is secured using Bearer token authentication powered by Laravel Sanctum.
 
 ## 📚 Table of Contents
 
@@ -46,7 +46,7 @@ mysql --version
 
 ### 1. Clone project (ganti URL sesuai repo kamu)
 ```
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/najminakinanti/inventory_hospital_API.git
 cd your-project
 ```
 
@@ -169,10 +169,10 @@ Contributions are welcome! To contribute:
 
 5. **Create** a pull request
 
-
+<!-- 
 ## 📃 License
 
 This project is licensed under the MIT License.  
 You are free to use, modify, and distribute this software with proper attribution.
 
-See the [LICENSE](LICENSE) file for more details.
+See the [LICENSE](LICENSE) file for more details. -->

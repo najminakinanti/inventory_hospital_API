@@ -9,22 +9,17 @@ class OrderSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('orders')->insert([
-            [
-                'hospital_id' => 1,
-                'status' => 'Diproses',
-                'order_date' => now()->subDays(2),
+        $orders = [];
+        for ($i = 1; $i <= 12; $i++) {
+            $orders[] = [
+                'hospital_id' => rand(1,5),
+                'status' => ['Diproses', 'Dikirim', 'Selesai'][array_rand(['Diproses', 'Dikirim', 'Selesai'])],
+                'order_date' => now()->subDays(rand(1, 30)),
                 'created_at' => now(),
-                'updated_at' => now()
-            ],
-            [
-                'hospital_id' => 1,
-                'status' => 'Dikirim',
-                'order_date' => now()->subDay(),
-                'created_at' => now(),
-                'updated_at' => now()
-            ]
-        ]);
+                'updated_at' => now(),
+            ];
+        }
+
+        DB::table('orders')->insert($orders);
     }
 }
-
